@@ -1,0 +1,155 @@
+<!-- login.component.html -->
+<main>
+  <div class="logo">
+    <img src="assets/Logo.png" alt="logo" />
+  </div>
+  <div class="container">
+    <div class="toggle-buttons">
+      <button
+        (click)="changeFormType('login')"
+        [ngStyle]="{
+          'text-decoration': formType == 'login' ? 'underline' : 'none',
+          'text-underline-offset': '5px',
+        }"
+      >
+        Login
+      </button>
+      <button
+        (click)="changeFormType('register')"
+        [ngStyle]="{
+          'text-decoration': formType == 'register' ? 'underline' : 'none',
+          'text-underline-offset': '5px'
+        }"
+      >
+        Register
+      </button>
+    </div>
+    <div class="login-form" *ngIf="formType == 'login'">
+      <h2>Login</h2>
+      <form #loginForm="ngForm" (ngSubmit)="login()">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="Enter your email"
+            name="email"
+            required
+            [(ngModel)]="email"
+            #emailInput="ngModel"
+            (click)="messageClear()"
+          />
+          <mat-error *ngIf="emailInput.invalid && emailInput.touched"
+            >Email is required</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            placeholder="Enter your password"
+            name="password"
+            required
+            [(ngModel)]="password"
+            #passwordInput="ngModel"
+            (click)="messageClear()"
+          />
+          <mat-error *ngIf="passwordInput.invalid && passwordInput.touched"
+            >Password is required</mat-error
+          >
+        </mat-form-field>
+        <p
+          style="position: absolute"
+          [ngStyle]="{
+            color: loginMessage == 'Login Successful' ? 'green' : 'red'
+          }"
+        >
+          {{ loginMessage }}
+        </p>
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="loginForm.invalid"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+
+    <div class="register-form" *ngIf="formType == 'register'">
+      <h2>Register</h2>
+      <form #registerForm="ngForm" (ngSubmit)="register()">
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input
+            matInput
+            placeholder="Enter your Name"
+            name="name"
+            required
+            [(ngModel)]="name"
+            #nameInput="ngModel"
+            (click)="messageClear()"
+          />
+          <mat-error *ngIf="nameInput.invalid && nameInput.touched"
+            >Name is required</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="Enter your email"
+            name="email"
+            required
+            [(ngModel)]="email"
+            #emailInput="ngModel"
+            (click)="messageClear()"
+          />
+          <mat-error *ngIf="emailInput.invalid && emailInput.touched"
+            >Email is required</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            placeholder="Enter your password"
+            name="password"
+            required
+            [(ngModel)]="password"
+            #passwordInput="ngModel"
+            (click)="messageClear()"
+          />
+          <mat-error *ngIf="passwordInput.invalid && passwordInput.touched"
+            >Password is required</mat-error
+          >
+        </mat-form-field>
+        <p
+          style="position: absolute"
+          [ngStyle]="{
+            color:
+              registerMessage == 'Registeration Successful' ? 'green' : 'red'
+          }"
+        >
+          {{ registerMessage }}
+        </p>
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="registerForm.invalid"
+        >
+          Register
+        </button>
+      </form>
+    </div>
+
+    <div class="loding-and-message">
+      <mat-spinner
+        [ngStyle]="{
+  'display' : loginwaiting || registerwaiting ? 'block' : 'none',
+}"
+      ></mat-spinner>
+    </div>
+  </div>
+</main>
