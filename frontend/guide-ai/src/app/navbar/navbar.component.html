@@ -1,0 +1,44 @@
+<nav>
+  <div class="logo">
+    <img src="assets/Logo.png" alt="logo" />
+  </div>
+  <div class="links">
+    <a
+      routerLink="/login"
+      routerLinkActive="active"
+      [ngStyle]="{ display: login_logoutDisplay() == true ? 'none' : 'block' }"
+      >Login / Register</a
+    >
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a
+      routerLink="/train"
+      routerLinkActive="active"
+      [ngStyle]="{
+        display: login_logoutDisplay() == true ? 'block' : 'none'
+      }"
+      >Train</a
+    >
+    <button
+      class="generate-resp-btn"
+      routerLink="/generate-response"
+      routerLinkActive="active"
+      [ngStyle]="{
+        display: login_logoutDisplay() == true ? 'block' : 'none'
+      }"
+    >
+      Generate Response
+    </button>
+
+    <button
+      id="logout"
+      (click)="logout()"
+      [ngStyle]="{ display: login_logoutDisplay() == true ? 'block' : 'none' }"
+    >
+      Logout
+    </button>
+    <span class="user-icon">
+      <img src="assets/account_circle.png" alt="user" />
+      <strong>{{ influencer_name }}</strong>
+    </span>
+  </div>
+</nav>
