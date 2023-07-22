@@ -1,0 +1,30 @@
+<div class="container">
+  <main>
+    <div class="add-qnas">
+      <h2>Add QnAs</h2>
+      <p>
+        Add more and more sample questions and answers to make your bot more
+        intelligent.
+      </p>
+      <form ngForm="qnaForm" (ngSubmit)="addQnA()">
+        <textarea
+          name="question"
+          id="question"
+          [(ngModel)]="qnaForm.question"
+          cols="30"
+          rows="5"
+          autofocus
+        ></textarea>
+        <textarea
+          name="answer"
+          id="answer"
+          [(ngModel)]="qnaForm.answer"
+          cols="30"
+          rows="5"
+          autofocus
+        ></textarea>
+        <button type="submit">Add QnA ❓</button>
+      </form>
+    </div>
+  </main>
+</div>

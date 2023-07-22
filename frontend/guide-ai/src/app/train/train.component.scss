@@ -1,0 +1,66 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 70vh;
+  padding: 10px;
+}
+
+.add-qnas {
+  width: 50%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.add-qnas form {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.add-qnas form textarea {
+  max-width: 80%;
+  min-width: 80%;
+  min-height: 20%;
+  max-height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.add-qnas form button {
+  padding: 10px 20px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  border: 1px solid #000;
+  background-color: white;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+}
+
+.add-qnas form button:hover{
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
