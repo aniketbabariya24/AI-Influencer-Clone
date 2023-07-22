@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class ApiservicesService {
+export class AuthService {
   private apiBaseUrl = environment.apiBaseUrl;
 
   private token: string = sessionStorage.getItem('token') || '';
