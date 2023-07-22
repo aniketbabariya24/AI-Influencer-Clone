@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="banner">
+    <div class="content">
+      <h1>
+        Providing the best <br />
+        <span>response</span> for you, <span>like you!</span>
+      </h1>
+      <p>Start with us by creating your profile.</p>
+      <div class="action-btns">
+        <button
+          class="btn btn-primary"
+          routerLink="/login"
+          [ngStyle]="{
+            display: login_logoutDisplay() == true ? 'none' : 'block'
+          }"
+        >
+          Login / Register
+        </button>
+        <button
+          class="btn btn-secondary"
+          routerLink="/train"
+          [ngStyle]="{
+            display: login_logoutDisplay() == true ? 'block' : 'none'
+          }"
+        >
+          Get Started!
+        </button>
+      </div>
+    </div>
+    <div class="image">
+      <img
+        src="https://static.vecteezy.com/system/resources/previews/010/869/734/non_2x/file-management-concept-illustration-modern-concept-of-file-management-system-online-document-storage-service-free-png.png"
+        alt="Landing Page"
+      />
+    </div>
+  </div>
+
+  <h1
+    style="
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bolder;
+      margin: 20px 0;
+    "
+  >
+    Here's how it works
+  </h1>
+  <main>
+    <div class="container-1">
+      <div class="working_image">
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/010/869/734/non_2x/file-management-concept-illustration-modern-concept-of-file-management-system-online-document-storage-service-free-png.png"
+          alt="Landing Page"
+        />
+      </div>
+      <div class="content">
+        <h2>Train the model</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi non
+          aliquid repellendus aut consequatur! Maiores nemo totam consequuntur,
+          nam neque dolores harum modi minus natus corrupti vel beatae quia
+          repudiandae. Voluptate minima suscipit nulla, cupiditate molestias eum
+          maiores accusantium aperiam impedit ratione libero adipisci deleniti
+          dolor. Voluptatibus incidunt, labore eaque fugiat, recusandae quas non
+          molestias ipsam sunt fugit eius ducimus?
+        </p>
+      </div>
+    </div>
+    <div class="container-1 reverse-flex">
+      <div class="working_image">
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/010/869/734/non_2x/file-management-concept-illustration-modern-concept-of-file-management-system-online-document-storage-service-free-png.png"
+          alt="Landing Page"
+        />
+      </div>
+      <div class="content">
+        <h2>Generate the response and give feedback</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi non
+          aliquid repellendus aut consequatur! Maiores nemo totam consequuntur,
+          nam neque dolores harum modi minus natus corrupti vel beatae quia
+          repudiandae. Voluptate minima suscipit nulla, cupiditate molestias eum
+          maiores accusantium aperiam impedit ratione libero adipisci deleniti
+          dolor. Voluptatibus incidunt, labore eaque fugiat, recusandae quas non
+          molestias ipsam sunt fugit eius ducimus?
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <div class="get-started-btn">
+    <button>Get Started!</button>
+  </div>
+</div>
