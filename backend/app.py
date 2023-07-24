@@ -22,4 +22,4 @@ app.register_blueprint(train_bp, url_prefix='/api/v1/train')
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=os.getenv('PORT'))
+    app.run()

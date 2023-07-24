@@ -147,9 +147,6 @@ def generate_response():
         if not influencer:
             return jsonify({"status": "error", "message": "Error generating response"}), 404
         response = chatGenResp(body['query'])
-        # update the isFirstQuery
-        influencers_collection.update_one({"_id": influencer_id}, {
-            "$set": {"isFirstQuery": False}})
 
         return jsonify({"status": "success", "data": response}), 200
     except Exception as e:
