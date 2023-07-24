@@ -1,6 +1,6 @@
 <nav>
   <div class="logo">
-    <img src="assets/Logo.png" alt="logo" />
+    <h1>GuideAI</h1>
   </div>
   <div class="links">
     <a
@@ -10,14 +10,14 @@
       >Login / Register</a
     >
     <a routerLink="/home" routerLinkActive="active">Home</a>
-    <a
+    <!-- <a
       routerLink="/train"
       routerLinkActive="active"
       [ngStyle]="{
         display: login_logoutDisplay() == true ? 'block' : 'none'
       }"
       >Train</a
-    >
+    > -->
     <button
       class="generate-resp-btn"
       routerLink="/generate-response"
@@ -36,9 +36,9 @@
     >
       Logout
     </button>
-    <span class="user-icon">
+    <!-- <span class="user-icon">
       <img src="assets/account_circle.png" alt="user" />
       <strong>{{ influencer_name }}</strong>
-    </span>
+    </span> -->
   </div>
 </nav>

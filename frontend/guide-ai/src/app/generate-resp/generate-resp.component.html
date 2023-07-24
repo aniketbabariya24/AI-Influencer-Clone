@@ -1,5 +1,5 @@
 <main>
-  <div class="left">
+  <!-- <div class="left">
     <h2>Previous QnAs</h2>
     <div *ngIf="fetchedQnAs.length <= 0" style="margin-top: 25px">
       <h3>You have no previous QnAs. Add some</h3>
@@ -8,7 +8,7 @@
       <h3>{{ qna.sample_question }}</h3>
       <p>{{ qna.sample_answer }}</p>
     </div>
-  </div>
+  </div> -->
   <div class="req-res-container">
     <div class="response-container">
       <h2>Response</h2>
@@ -30,34 +30,5 @@
       </form>
     </div>
   </div>
-  <div class="right">
-    <h2>Train your AI here</h2>
-    <div class="train-ai">
-      <h3>Upload Transcript file</h3>
-      <form (ngSubmit)="sendTrascriptFile()">
-        <input
-          type="file"
-          name="transcript_file"
-          id="transcript_file"
-          (change)="onFileSelected($event, 'transcript')"
-        />
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-    <div class="train-ai">
-      <h3>Upload QnAs file</h3>
-      <form (ngSubmit)="sendQnAFile()">
-        <input
-          type="file"
-          name="qna_file"
-          id="qna_file"
-          (change)="onFileSelected($event, 'qnas')"
-        />
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-    <div class="train-btn">
-      <button>Train</button>
-    </div>
-  </div>
+ 
 </main>
