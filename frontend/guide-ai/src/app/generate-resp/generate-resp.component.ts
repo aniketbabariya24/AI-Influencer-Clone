@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { TrainService } from '../train.service';
+import { animation } from '@angular/animations';
 
 @Component({
   selector: 'app-generate-resp',
@@ -30,18 +31,14 @@ export class GenerateRespComponent implements OnInit {
     // increase the top-margin of the sibling button of textarea
     if (event.target.value.length == 0) {
       event.target.style.height = 'auto';
-      event.target.nextElementSibling.style.marginTop = '0px';
       return;
     }
-    if (event.target.scrollHeight > 150) {
+    if (event.target.scrollHeight > 100) {
       event.target.style.overflowY = 'scroll';
-      event.target.nextElementSibling.style.marginTop = '100px';
       return;
     }
     event.target.style.height = 'auto';
     event.target.style.height = event.target.scrollHeight + 'px';
-    event.target.nextElementSibling.style.marginTop =
-      event.target.scrollHeight / 2 + 'px';
   }
 
   onFileSelected(event: any, type: string) {
@@ -131,36 +128,44 @@ export class GenerateRespComponent implements OnInit {
     }
 
     const userP = document.createElement('p');
-    userP.innerHTML = 'Q:' + this.queryForm.query;
-    userP.style.padding = '10px';
-    userP.style.borderRadius = '5px';
+    userP.style.marginLeft = '10px';
+    userP.style.padding = '5px 10px';
+    userP.style.margin = '10px 0';
+    userP.innerHTML = this.queryForm.query;
     this.response?.appendChild(userP);
+    const querTopass = this.queryForm.query;
+    this.queryForm.query = '';
 
-    this.apiTrainServ.generateResponse(this.queryForm.query).subscribe(
+    const sub_btn = document.querySelector('#submit-btn') as HTMLButtonElement;
+
+    sub_btn.innerHTML = '⏳';
+    sub_btn.classList.add('rotate-continuously');
+
+    this.apiTrainServ.generateResponse(querTopass).subscribe(
       (res) => {
         if (res.status == 'success') {
-          this.queryForm.query = '';
           const textarea = document.querySelector(
             '#query'
           ) as HTMLTextAreaElement;
           textarea.style.height = 'auto';
-
           // create p element and append to response div
           const p = document.createElement('p');
           p.innerHTML = res.data;
-          p.style.width = '100%';
-          p.style.backgroundColor = '#f5f5f5';
-          p.style.padding = '10px';
+          p.style.marginLeft = '10px';
           p.style.borderRadius = '5px';
-          p.style.color = '#000';
-          p.style.margin = '10px 0px';
+          p.style.backgroundColor = '#f5f5f5';
+          p.style.padding = '5px 10px';
           this.response?.appendChild(p);
         } else {
           console.log(res);
         }
+        sub_btn.innerHTML = '▶️';
+        sub_btn.classList.remove('rotate-continuously');
       },
       (err) => {
         console.log(err);
+        sub_btn.innerHTML = '▶️';
+        sub_btn.classList.remove('rotate-continuously');
       }
     );
   }

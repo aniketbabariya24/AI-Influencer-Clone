@@ -1,9 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
 main {
   margin: 0px auto;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 88vh;
+  height: 85vh;
 }
 
 .left {
@@ -91,39 +97,38 @@ main {
 }
 
 .req-res-container {
-  width: 51%;
+  width: 52%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-around;
   height: 100%;
 }
 
 .response-container {
   width: 100%;
-  height: 70%;
-  padding: 0.2rem 0;
-  border-radius: 5px;
-  margin-bottom: 1rem;
-  overflow-y: scroll;
+  height: 90%;
 }
 
-.response-container p{
-  border: 2px solid;
-  margin: auto;
+.response-container h2 {
+  margin-left: 10px;
+}
+
+#response {
+  width: 100%;
+  height: 90%;
+  overflow-y: scroll;
 }
 
 .left::-webkit-scrollbar,
 .generate-response form textarea::-webkit-scrollbar,
-.response-container::-webkit-scrollbar {
+#response::-webkit-scrollbar {
   width: 0.5rem;
 }
 
 .generate-response {
   width: 100%;
-  height: 20%;
-  padding: 0 5px;
-  border-radius: 5px;
+  height: 10%;
 }
 
 .generate-response h2 {
@@ -132,7 +137,7 @@ main {
 }
 
 .generate-response form {
-  width: 95%;
+  width: 100%;
   height: 100%;
   margin: auto;
   display: flex;
@@ -162,12 +167,12 @@ main {
 .generate-response form > button {
   font-size: 2rem;
   outline: none;
-  padding: 0;
   border: none;
   background-color: #fff;
   cursor: pointer;
   position: absolute;
-  margin-left: 88%;
+  margin-left: 83%;
+  border-radius: 20px;
 }
 
 .train-btn {
@@ -191,4 +196,17 @@ main {
   background-color: rgb(70, 138, 106);
   color: white;
   font-weight: bold;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-continuously {
+  animation: rotate360 2s linear infinite; /* Adjust the rotation duration as needed */
 }

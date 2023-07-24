@@ -26,7 +26,7 @@
           (input)="resizeTextarea($event)"
           placeholder="Ask me something"
         ></textarea>
-        <button type="submit">▶️</button>
+        <button type="submit" id="submit-btn">▶️</button>
       </form>
     </div>
   </div>
@@ -45,7 +45,7 @@
       </form>
     </div>
     <div class="train-ai">
-      <h3>Upload QnAs CSV file</h3>
+      <h3>Upload QnAs file</h3>
       <form (ngSubmit)="sendQnAFile()">
         <input
           type="file"
