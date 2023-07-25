@@ -41,7 +41,7 @@ main {
 }
 
 .previous-qna-divs h3 {
-  color: #000000;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -121,6 +121,7 @@ main {
 
 .response-container h2 {
   margin-left: 10px;
+  color: #fff;
 }
 
 #response {
@@ -128,7 +129,9 @@ main {
   height: 90%;
   overflow-y: scroll;
 }
-
+#response {
+  color: gray !important;
+}
 .left::-webkit-scrollbar,
 .generate-response form textarea::-webkit-scrollbar,
 #response::-webkit-scrollbar {
@@ -168,8 +171,8 @@ main {
   border: none;
   outline: none;
   border-radius: 5px;
-  box-shadow: rgba(33, 35, 37, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  box-shadow: rgba(232, 235, 238, 0.3) 0px 1px 2px 0px,
+    rgba(247, 252, 255, 0.15) 0px 2px 6px 2px;
 }
 
 .generate-response form textarea::placeholder {
